@@ -53,26 +53,28 @@ function calculationResult(calculationType) {
 	writeToLog(calculationType, initialResult, enteredNumber, currentResult);
 }
 
-function add() {
-	calculationResult('ADD');
-}
+// function add() {
+// 	calculationResult('ADD');
+// }
 
-function subtract() {
-	calculationResult('SUBTRACT');
-}
+// function subtract() {
+// 	calculationResult('SUBTRACT');
+// }
 
-function multiply() {
-	calculationResult('MULTIPLY');
-}
+// function multiply() {
+// 	calculationResult('MULTIPLY');
+// }
 
-function divide() {
-	calculationResult('DIVIDE');
+// function divide() {
+// 	calculationResult('DIVIDE');
+// }
+function calculateType(type) {
+	calculationResult(type);
 }
-
-addBtn.addEventListener('click', add);
-subtractBtn.addEventListener('click', subtract);
-multiplyBtn.addEventListener('click', multiply);
-divideBtn.addEventListener('click', divide);
+addBtn.addEventListener('click', calculateType.bind(this, 'ADD'));
+subtractBtn.addEventListener('click', calculateType.bind(this, 'SUBTRACT'));
+multiplyBtn.addEventListener('click', calculateType.bind(this, 'MULTIPLY'));
+divideBtn.addEventListener('click', calculateType.bind(this, 'DIVIDE'));
 
 //let calculationDescription ='(' + currentResult + ' +10) * 3/2 - 1';
 
